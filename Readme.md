@@ -53,7 +53,9 @@ As well as the **label** of each variable:
 
 Now form the **URL** for each variable like this:
 
-http://things.ubidots.com/api/1.6/devices/**device_label**/**variable_label**/values?token=**your_token**
+<pre><code>
+<i>http://things.ubidots.com/api/1.6/devices/</i><b>device_label</b><i>/</i><b>variable_label</b><i>/values?token=</i><b>your_token</b>
+</code></pre>
 
 Replace each URL in the *init.lua* file. For more details, see [**how to send data to Ubidots**](https://ubidots.com/docs/api/#send-values).
 
