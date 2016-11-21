@@ -4,10 +4,12 @@ Instructions
 [**Ubidots**](http://www.ubidots.com) with three variables on it.*
 
 The BME280 is, by default, assumed to be connected this way: 
-
 **VCC** -> 3.3V
+
 **SDA** -> GPIO13(aka pin no. 7)
+
 **SCL** -> GPIO14(aka pin no. 5)
+
 **GND** -> GND
 
 
@@ -49,11 +51,16 @@ As well as the **label** of each variable:
 ![Variable label](https://i.imgur.com/cOeCtJf.png)
 
 Now form the **URL** for each variable like this:
-`http://things.ubidots.com/api/1.6/devices/**device_label**/**variable_label**/values?token=**your_token**`.
+http://things.ubidots.com/api/1.6/devices/**device_label**/**variable_label**/values?token=**your_token**.
 
 Replace each URL in the *init.lua* file. For more details, see [**how to send data to Ubidots**](https://ubidots.com/docs/api/#send-values).
 
 
 **Finally**, using a tool like [**NodeMCU Uploader**](https://github.com/kmpm/nodemcu-uploader), 
-upload the *init.lua* file to the ESP8266 and then restart the device. Your weather station should
-now work.
+upload the *init.lua* file to the ESP8266 and then restart the device. 
+
+```bash
+nodemcu-uploader upload init.lua
+```
+
+Your weather station should now work.
