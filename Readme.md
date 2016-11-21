@@ -4,6 +4,7 @@ Instructions
 [**Ubidots**](http://www.ubidots.com) with three variables on it.*
 
 The BME280 is, by default, assumed to be connected this way: 
+
 **VCC** -> 3.3V
 
 **SDA** -> GPIO13(aka pin no. 7)
@@ -11,7 +12,7 @@ The BME280 is, by default, assumed to be connected this way:
 **SCL** -> GPIO14(aka pin no. 5)
 
 **GND** -> GND
-
+<br>
 
 Make sure your ESP8266 has a version of NodeMCU with the following modules installed:
 *bme280, file, gpio, http, i2c, net, node, tmr, uart, wifi*.
@@ -27,7 +28,7 @@ wifi.setmode(wifi.STATION)
 wifi.sta.config(your_ssid, ssid_password, 0)  -- 0 means no autoconnect
 ```
 
-***NOTE*** All the above settings are **persistent**. Even after restart, these commands do not need to be set again.
+***NOTE:*** All the above settings are **persistent**. Even after restart, these commands do not need to be set again.
 This is why you don't see them anywhere in the *init.lua* again. 
 See [**the wifi module's documentation**](https://nodemcu.readthedocs.io/en/master/en/modules/wifi/)
 for more info.
@@ -51,7 +52,8 @@ As well as the **label** of each variable:
 ![Variable label](https://i.imgur.com/cOeCtJf.png)
 
 Now form the **URL** for each variable like this:
-http://things.ubidots.com/api/1.6/devices/**device_label**/**variable_label**/values?token=**your_token**.
+
+<pre>http://things.ubidots.com/api/1.6/devices/<b>device_label</b>/<b>variable_label</b>/values?token=<b>your_token</b></pre>.
 
 Replace each URL in the *init.lua* file. For more details, see [**how to send data to Ubidots**](https://ubidots.com/docs/api/#send-values).
 
